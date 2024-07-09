@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { PersonalInfoFormComponent } from './components/forms/personal-info-form/personal-info-form.component';
 import { SelectPlanFormComponent } from './components/forms/select-plan-form/select-plan-form.component';
 import { AddOnFormComponent } from './components/forms/add-on-form/add-on-form.component';
@@ -15,7 +14,6 @@ import { StepSidebarComponent } from './components/step-sidebar/step-sidebar.com
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     PersonalInfoFormComponent,
     SelectPlanFormComponent,
     AddOnFormComponent,

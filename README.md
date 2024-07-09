@@ -1,6 +1,11 @@
 # Multi Step Form
 
-This repository contains code for a dictionary web app  built using Typescript + React. The app includes an input field to search a word meaning.
+Users are able to:
+
+Complete each step of the sequence
+See a summary of their selections on the final step and confirm their order
+View the optimal layout for the interface depending on their device's screen size
+See hover and focus states for all interactive elements on the page
 
 ## Table of Contents
 - [Demo](https://main--dictionary-web-app-hppy.netlify.app/)
