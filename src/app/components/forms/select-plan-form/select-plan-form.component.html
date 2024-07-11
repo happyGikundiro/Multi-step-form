@@ -1,1 +1,32 @@
-<p>select-plan-form works!</p>
+
+<div class="w-full flex justify-center  absolute top-[100px] lg:relative lg:top-0">
+    <div class="bg-white  mx-5 rounded-[10px] shadow-md md:shadow-none px-6 py-10 space-y-5 lg:rounded-none">
+
+    <div>
+    <h1 class="text-denim font-bold text-[24px] mb-1">Select your plan</h1>
+    <p class="text-grey">You have the option of monthly or yearly billing.</p>
+    </div>
+     
+    <div class="lg:flex justify-between bg-slate-00 space-y-3">
+    <div *ngFor="let plan of planOptions" class="border-[1.5px] border-Cool-gray rounded-md p-2 w-full flex gap-3">
+          <img [src]="plan.icon" alt="">
+          <div>
+          <p class="text-denim font-medium">{{plan.plan}}</p>
+          <p class="text-grey text-sm">{{plan.duration.monthly.price}}</p>
+          </div>
+    </div>
+    </div>
+
+    <div class="bg-magnolia flex justify-center items-center gap-4 py-3 rounded-md">
+        <p class="text-denim font-medium text-sm">Monthly</p>
+        <div>
+            <svg width="32" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-denim">
+                <rect width="36" height="20" rx="10" fill="currentColor" />
+                <circle cx="10" cy="10" r="7" fill="white" class="transition-transform duration-300"/>
+            </svg>
+        </div>
+        <p class="text-grey font-medium text-sm">Yearly</p>
+    </div>
+
+    </div>
+</div>
