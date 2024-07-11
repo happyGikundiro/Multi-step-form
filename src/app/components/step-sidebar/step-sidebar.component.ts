@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-step-sidebar',
@@ -24,4 +25,6 @@ export class StepSidebarComponent {
       description:"SUMMARY"
     },
   ]
+
+  constructor(public formService: FormService){}
 }

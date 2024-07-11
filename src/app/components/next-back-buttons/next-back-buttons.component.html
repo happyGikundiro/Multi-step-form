@@ -1,7 +1,9 @@
 
 <div class="bg-white absolute bottom-0 z-99 w-full py-4 lg:py-1 px-11 lg:relative flex justify-between ">
-    <button class="text-grey font-medium text-sm">Go Back</button>
-    <button class="bg-denim text-white text-sm font-medium rounded-md py-2 px-5">Next Step</button>
+    <span *ngIf="isFirstStep()" class="text-grey font-medium text-sm invisible">Go Back</span>
+    <button *ngIf="!isFirstStep()" class="text-grey font-medium text-sm" (click)="prevStep()">Go Back</button>
+    <button *ngIf="!isLastStep()" class="bg-denim text-white text-sm font-medium rounded-md py-2 px-5" (click)="nextStep()">Next Step</button>
+    <button *ngIf="isLastStep()" (click)="nextStep()" class="bg-denim text-white text-sm font-medium rounded-md py-2 px-5">Confirm</button>
 </div>
 
  

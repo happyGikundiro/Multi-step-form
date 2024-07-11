@@ -5,12 +5,12 @@
     <app-step-sidebar></app-step-sidebar>
 
     <div>
-    <app-personal-info-form></app-personal-info-form>
-    <!-- <app-select-plan-form></app-select-plan-form> -->
-    <!-- <app-add-on-form></app-add-on-form> -->
-     <!-- <app-summary-form></app-summary-form> -->
-    <!-- <app-confirm-form></app-confirm-form> -->
-    <app-next-back-buttons></app-next-back-buttons>
+    <app-personal-info-form *ngIf="formService.currentStep === 0"></app-personal-info-form>
+    <app-select-plan-form *ngIf="formService.currentStep === 1"></app-select-plan-form>
+    <app-add-on-form *ngIf="formService.currentStep === 2"></app-add-on-form>
+     <app-summary-form *ngIf="formService.currentStep === 3"></app-summary-form>
+    <app-confirm-form *ngIf="formService.currentStep === 4"></app-confirm-form>
+    <app-next-back-buttons *ngIf="formService.currentStep < 4"></app-next-back-buttons>
     </div>
     
     </div>
