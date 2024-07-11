@@ -15,3 +15,18 @@ export interface Plan {
     }
   
   }
+
+  export interface adds{
+    addon:string;
+    description: string;
+    duration:{
+      monthly:{
+        price: string;
+        addToTotal: number
+      }
+      yearly:{
+        price: string;
+        addToTotal: number
+      }
+    }
+  }

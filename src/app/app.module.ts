@@ -10,6 +10,7 @@ import { SummaryFormComponent } from './components/forms/summary-form/summary-fo
 import { FormsComponent } from './components/forms/forms.component';
 import { NextBackButtonsComponent } from './components/next-back-buttons/next-back-buttons.component';
 import { StepSidebarComponent } from './components/step-sidebar/step-sidebar.component';
+import { ConfirmFormComponent } from './components/forms/confirm-form/confirm-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StepSidebarComponent } from './components/step-sidebar/step-sidebar.com
     SummaryFormComponent,
     FormsComponent,
     NextBackButtonsComponent,
-    StepSidebarComponent
+    StepSidebarComponent,
+    ConfirmFormComponent
   ],
   imports: [
     BrowserModule,

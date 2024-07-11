@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Plan } from '../../../model/plan';
+import { Plan } from '../../../model/model';
 
 @Component({
   selector: 'app-select-plan-form',
