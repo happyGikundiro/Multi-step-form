@@ -1,17 +1,31 @@
-  
-  <div class="relative lg:flex lg:items-center min-h-screen">
-    <div class=" lg:bg-white lg:rounded-lg lg:shadow-lg lg:flex lg:justify-between lg:gap-10 lg:max-w-[850px] mx-auto lg:p-3">
+
+<div class="relative lg:flex lg:items-center min-h-screen">
+  <div class="lg:bg-white lg:rounded-lg lg:shadow-lg lg:flex lg:justify-between lg:gap-10 lg:max-w-[850px] mx-auto lg:p-3">
 
     <app-step-sidebar></app-step-sidebar>
 
     <div>
-    <app-personal-info-form *ngIf="formService.currentStep === 0"></app-personal-info-form>
-    <app-select-plan-form *ngIf="formService.currentStep === 1"></app-select-plan-form>
-    <app-add-on-form *ngIf="formService.currentStep === 2"></app-add-on-form>
-     <app-summary-form *ngIf="formService.currentStep === 3"></app-summary-form>
-    <app-confirm-form *ngIf="formService.currentStep === 4"></app-confirm-form>
-    <app-next-back-buttons *ngIf="formService.currentStep < 4"></app-next-back-buttons>
-    </div>
-    
+      <app-personal-info-form
+        *ngIf="formService.currentStep === 0" (formValid)="onFormValid($event)">
+      </app-personal-info-form>
+
+      <app-select-plan-form *ngIf="formService.currentStep === 1"></app-select-plan-form>
+
+      <app-add-on-form *ngIf="formService.currentStep === 2"></app-add-on-form>
+
+      <app-summary-form *ngIf="formService.currentStep === 3"></app-summary-form>
+
+      <app-confirm-form *ngIf="formService.currentStep === 4"></app-confirm-form>
+
+      <app-next-back-buttons
+        *ngIf="formService.currentStep < 4"
+        (next)="handleNextStep()"
+        (prev)="formService.prevStep()">
+      </app-next-back-buttons>
+
     </div>
   </div>
+</div>
+
+
+

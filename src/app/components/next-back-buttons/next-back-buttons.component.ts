@@ -1,29 +1,32 @@
-import { Component } from '@angular/core';
+
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-next-back-buttons',
   templateUrl: './next-back-buttons.component.html',
-  styleUrl: './next-back-buttons.component.css'
+  styleUrls: ['./next-back-buttons.component.css']
 })
 export class NextBackButtonsComponent {
+  @Output() next = new EventEmitter<void>();
+  @Output() prev = new EventEmitter<void>();
 
-  constructor(public formservice: FormService){}
+  constructor(public formService: FormService) {}
 
-  nextStep(){
-    this.formservice.nextStep();
+  nextStep() {
+    this.next.emit();
   }
 
-  prevStep(){
-    this.formservice.prevStep()
+  prevStep() {
+    this.prev.emit();
   }
 
-  isFirstStep():boolean{
-     return this.formservice.currentStep === 0;
+  isFirstStep(): boolean {
+    return this.formService.currentStep === 0;
   }
 
-  isLastStep():boolean{
-    return this.formservice.currentStep === 3;
+  isLastStep(): boolean {
+    return this.formService.currentStep === 3;
   }
-
 }
+

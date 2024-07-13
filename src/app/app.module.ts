@@ -11,6 +11,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { NextBackButtonsComponent } from './components/next-back-buttons/next-back-buttons.component';
 import { StepSidebarComponent } from './components/step-sidebar/step-sidebar.component';
 import { ConfirmFormComponent } from './components/forms/confirm-form/confirm-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ConfirmFormComponent } from './components/forms/confirm-form/confirm-fo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

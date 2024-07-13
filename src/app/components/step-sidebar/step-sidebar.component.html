@@ -3,7 +3,7 @@
              lg:bg-[url('/assets/images/bg-sidebar-desktop.svg')] lg:h-[480px] lg:w-[220px] lg:bg-bottom lg:rounded-lg lg:block">
     <div *ngFor="let step of steps; let i = index" class="lg:flex lg:items-center lg:gap-4 lg:pl-5 lg:space-y-3 lg:mb-2">
         <div class="lg:mt-3">
-        <p [ngClass]="{'bg-lightblue text-blue-950 border-none': i === formService.currentStep}" class="border-[1.5px] border-white rounded-full flex justify-center items-center w-[33px] h-[33px] text-white font-bold p-4 lg:p-0 text-sm">{{step.step}}</p>
+        <p [ngClass]="{'bg-lightblue text-blue-900 border-none': i === formService.currentStep}" class="border-[1.5px] border-white rounded-full flex justify-center items-center w-[33px] h-[33px] text-white font-bold p-4 lg:p-0 text-sm">{{step.step}}</p>
         </div>
         <div class="hidden lg:block ">
             <p class="text-lightblue text-[12px]">STEP {{step.step}}</p>
