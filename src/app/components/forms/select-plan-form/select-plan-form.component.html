@@ -8,25 +8,27 @@
     </div>
      
     <div class="lg:flex lg:justify-between space-y-3 lg:gap-3 lg:items-center">
-    <div *ngFor="let plan of planOptions" class="border-[1.5px] border-Cool-gray rounded-md p-2 w-full flex gap-3 lg:block">
+    <div *ngFor="let plan of planOptions"  (click)="selectPlan(plan)"
+    [ngClass]="selectedPlan === plan ? 'border-blue-500' : 'border-Cool-gray'"
+    class="border-[1.5px] border-Cool-gray rounded-md p-2 w-full flex gap-3 lg:block">
           <img [src]="plan.icon" alt="">
           <div class="lg:mt-10">
           <p class="text-denim font-medium">{{plan.plan}}</p>
-          <p class="text-grey text-sm">{{plan.duration.monthly.price}}</p>
+          <p class="text-grey text-sm">{{getPrice(plan)}}</p>
           </div>
     </div>
     </div>
 
-    <div class="bg-magnolia flex justify-center items-center gap-4 py-3 rounded-md">
-        <p class="text-denim font-medium text-sm">Monthly</p>
+    <div class="bg-magnolia flex justify-center items-center gap-4 py-3 rounded-md" (click)="toggleDuration()">
+        <p [ngClass]="isMonthly ? 'text-denim' : 'text-grey'" class=" text-sm font-medium">Monthly</p>
         <div>
-            <svg width="32" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-denim">
-                <rect width="36" height="20" rx="10" fill="currentColor" />
-                <circle cx="10" cy="10" r="7" fill="white" class="transition-transform duration-300"/>
-            </svg>
+          <svg width="32" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-denim">
+            <rect width="36" height="20" rx="10" fill="currentColor" />
+            <circle cx="10" cy="10" r="7" [attr.cx]="isMonthly ? '10' : '26'" fill="white" class="transition-transform duration-300"/>
+          </svg>
         </div>
-        <p class="text-grey font-medium text-sm">Yearly</p>
-    </div>
+        <p [ngClass]="isMonthly ? 'text-grey' : 'text-denim'" class=" font-medium text-sm">Yearly</p>
+      </div>
 
     </div>
 </div>

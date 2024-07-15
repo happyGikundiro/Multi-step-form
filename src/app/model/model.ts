@@ -29,4 +29,5 @@ export interface Plan {
         addToTotal: number
       }
     }
+    selected?: boolean;
   }

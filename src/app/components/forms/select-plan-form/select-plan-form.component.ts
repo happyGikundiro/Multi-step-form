@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 import { Plan } from '../../../model/model';
 
 @Component({
@@ -7,6 +7,9 @@ import { Plan } from '../../../model/model';
   styleUrl: './select-plan-form.component.css'
 })
 export class SelectPlanFormComponent {
+
+  @Output() planSelected = new EventEmitter<{ plan: Plan, isMonthly: boolean }>(); 
+
   planOptions:Plan[] = [
     {
       plan: 'Arcade',
@@ -57,4 +60,28 @@ export class SelectPlanFormComponent {
       },
     },
   ];
+
+  isMonthly: boolean = true;
+  selectedPlan: Plan | null = null;
+
+  toggleDuration() {
+    this.isMonthly = !this.isMonthly;
+  }
+
+  getPrice(plan: Plan): string {
+    return this.isMonthly ? plan.duration.monthly.price : plan.duration.yearly.price;
+  }
+
+  selectPlan(plan: Plan) {
+    this.selectedPlan = plan;
+    this.planSelected.emit({ plan: this.selectedPlan, isMonthly: this.isMonthly });
+  }
+
+  confirmSelection() {
+    if (this.selectedPlan) {
+      this.planSelected.emit({ plan: this.selectedPlan, isMonthly: this.isMonthly });
+    } else {
+      alert("Please select a plan before confirming.");
+    }
+  }
 }

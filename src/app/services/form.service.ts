@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class FormService {
+
   private currentStepSubject = new BehaviorSubject<number>(0);
-  currentStep$ = this.currentStepSubject.asObservable();
   currentStep = 0;
 
   nextStep() {

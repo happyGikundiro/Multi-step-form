@@ -1,5 +1,5 @@
 
-<div class="relative lg:flex lg:items-center min-h-screen">
+ <div class="relative lg:flex lg:items-center min-h-screen">
   <div class="lg:bg-white lg:rounded-lg lg:shadow-lg lg:flex lg:justify-between lg:gap-10 lg:max-w-[850px] mx-auto lg:p-3">
 
     <app-step-sidebar></app-step-sidebar>
@@ -9,11 +9,11 @@
         *ngIf="formService.currentStep === 0" (formValid)="onFormValid($event)">
       </app-personal-info-form>
 
-      <app-select-plan-form *ngIf="formService.currentStep === 1"></app-select-plan-form>
+      <app-select-plan-form *ngIf="formService.currentStep === 1" (planSelected)="onPlanSelected($event)"></app-select-plan-form>
 
-      <app-add-on-form *ngIf="formService.currentStep === 2"></app-add-on-form>
+      <app-add-on-form *ngIf="formService.currentStep === 2" [isMonthly]="selectedPlan?.isMonthly ?? true" (selectedAddOnsChange)="onAddOnsSelected($event)"></app-add-on-form>
 
-      <app-summary-form *ngIf="formService.currentStep === 3"></app-summary-form>
+      <app-summary-form *ngIf="formService.currentStep === 3" [selectedPlan]="selectedPlan!" [selectedAddOns]="selectedAddOns"></app-summary-form>
 
       <app-confirm-form *ngIf="formService.currentStep === 4"></app-confirm-form>
 
@@ -26,6 +26,3 @@
     </div>
   </div>
 </div>
-
-
-
