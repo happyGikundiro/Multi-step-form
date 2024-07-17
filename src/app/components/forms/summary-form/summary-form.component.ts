@@ -1,6 +1,8 @@
 
 import { Component, Input } from '@angular/core';
 import { Plan, adds } from '../../../model/model';
+import { Router } from '@angular/router';
+import { FormService } from '../../../services/form.service';
 
 @Component({
   selector: 'app-summary-form',
@@ -10,6 +12,8 @@ import { Plan, adds } from '../../../model/model';
 export class SummaryFormComponent {
   @Input() selectedPlan!: { plan: Plan, isMonthly: boolean };
   @Input() selectedAddOns: adds[] = [];
+
+  constructor(private router: Router, private formService: FormService){}
 
   getPlanPrice(): string {
     return this.selectedPlan.isMonthly ? this.selectedPlan.plan.duration.monthly.price : this.selectedPlan.plan.duration.yearly.price;
@@ -25,5 +29,8 @@ export class SummaryFormComponent {
       return total + (this.selectedPlan.isMonthly ? addon.duration.monthly.addToTotal : addon.duration.yearly.addToTotal);
     }, 0);
     return `$${planPrice + addOnTotal}/${this.selectedPlan.isMonthly ? 'mo' : 'yr'}`;
+  }
+
+  changePlan() {
   }
 }

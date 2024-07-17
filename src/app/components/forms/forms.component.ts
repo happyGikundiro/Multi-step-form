@@ -12,21 +12,20 @@ import { adds } from '../../model/model';
 })
 export class FormsComponent {
   @ViewChild(PersonalInfoFormComponent) personalInfoFormComponent!: PersonalInfoFormComponent;
-  // selectedPlan!: { plan: Plan, isMonthly: boolean } ;
+ 
   selectedPlan: { plan: Plan, isMonthly: boolean } | null = null;
   selectedAddOns: adds[] = [];
 
   constructor(public formService: FormService) {}
 
   onFormValid(isValid: boolean) {
-    // if (isValid) {
+    if (isValid) {
       this.formService.nextStep();
-    // }
+    }
   }
 
   onPlanSelected(planData: { plan: Plan, isMonthly: boolean }) {
     this.selectedPlan = planData;
-    // this.formService.nextStep();
   }
 
   onAddOnsSelected(addOns: adds[]) {
@@ -39,7 +38,6 @@ export class FormsComponent {
         this.personalInfoFormComponent.validate();
         break;
       case 1:
-        // this.onPlanSelected(this.selectedPlan);
         if (this.selectedPlan) {
           this.formService.nextStep();
         } else {

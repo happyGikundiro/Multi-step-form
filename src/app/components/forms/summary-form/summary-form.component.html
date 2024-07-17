@@ -11,7 +11,7 @@
     <div  class=" w-full flex items-center justify-between gap-3 border-b-[1px] pb-4 border-light-gray ">
           <div>
           <p class="text-denim font-medium">{{ selectedPlan.plan.plan }} ({{ selectedPlan.isMonthly ? 'Monthly' : 'Yearly' }})</p>
-          <p class="text-grey text-sm underline">Change</p>
+          <p class="text-grey text-sm underline" (click)="changePlan()">Change</p>
           </div>
           <div>
             <p class="text-sm text-denim font-bold">{{ getPlanPrice() }}</p>

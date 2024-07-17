@@ -8,21 +8,19 @@ Users are able to:
 -See hover and focus states for all interactive elements on the page
 
 ## Table of Contents
-- [Demo](https://main--dictionary-web-app-hppy.netlify.app/)
+- [Demo](https://main--hppy-multistep-form.netlify.app/)
 - [Features](#features)
 - [Screenshoot](#screenshot)
 - [Installation](#installation)
 - [Usage](#usage)
 
 ## Demo
-You can see a live demo of the form [here](https://main--dictionary-web-app-hppy.netlify.app/).
+You can see a live demo of the form [here](https://main--hppy-multistep-form.netlify.app/).
 
-## Features
-- *text input:* fill the form.
 
 ## Screenshot
 
-<!-- ![Screenshot 2024-07-01 082156](https://github.com/happyGikundiro/Password-Generator-App/assets/172483008/19f93181-d18e-4dc4-b141-557afa63f4c8) -->
+file:///C:/Users/User/OneDrive/Pictures/Screenshots/Screenshot%202024-07-17%20235501.png
 
 ## Installation
 To get a local copy up and running, follow these simple steps.
@@ -43,5 +41,6 @@ To get a local copy up and running, follow these simple steps.
 1. Fill the form from each step.
 2. Choose your plan either monthly or yearly.
 3. Select adds-on.
+4. get the summary from the form
 
 
